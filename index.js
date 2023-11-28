@@ -70,6 +70,32 @@ function chooseCharacter() {
   });
 }
 
+function startGame(selectedCharacter) {
+  console.log(`You chosed ${selectedCharacter.name}!`);
+}
+
+// select attack
+function attackOptions(character) {
+  console.clear()
+  console.log(`Choose an attack, ${character.name}:`);
+  character.attacks.forEach((attack, index) => {
+    console.log(`${index + 1}. ${attack.skills}`);
+  })
+}
+
+// start game
+
+// input attack
+
+// generate frieza's attack (random)
+
+// health status baase on the chosen attack
+
+// print game result
+
+// new game or end the game here
+
+
 
 // Interaction
 while (true) {
@@ -84,18 +110,14 @@ while (true) {
     chalk.white("\nEnter your username:\n") + chalk.blue.bold("> ")
   );
   console.clear();
-  console.log(`Hello, ${chalk.blue.bold(userName)}! Choose your character to defeat ${chalk.red.bold("Frieza:")}:\n`);
+  console.log(`Hello, ${chalk.blue.bold(userName)}! Choose your character to defeat ${chalk.red.bold("Frieza")}:\n`);
  
   
   chooseCharacter()
   
   // choose character input
-  const characterIndex = Number(rs.question("\nSelect your character: "));
+  const characterIndex = Number(rs.question("\nSelect your character (enter the number of the chosen character): "));
   const selectedCharacter = characters[characterIndex];
 
   startGame(userName, selectedCharacter);
-}
-
-function startGame(username) {
-  console.log(`Choose your attack, ${chalk.blue.bold(username)}!`);
 }
