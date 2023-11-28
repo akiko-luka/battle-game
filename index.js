@@ -26,40 +26,40 @@ class FightingSkills {
 
 // character info
 const goku = new Character("Goku", 100, 80, [
-  new FightingSkills("Kamehameha (energy wave attack)", 40, 35),
-  new FightingSkills("Spirit Bomb (gathering energy from living beings)",30, 20),
-  new FightingSkills("Super Saiyan transformations", 50, 40),
+  new FightingSkills("Kamehameha", 40, 35),
+  new FightingSkills("Rapid Kick Rush",30, 20),
+  new FightingSkills("Super Kamehameha", 50, 40),
 ]);
 
 const vegeta = new Character("Vegeta", 100, 70, [
-  new FightingSkills("Galick Gun (energy wave attack)", 35, 25),
-  new FightingSkills("Final Flash (powerful energy blast)", 40, 30),
-  new FightingSkills("Big Bang Attack (powerful energy sphere)", 30, 20),
+  new FightingSkills("Super Dash Kick", 25, 15),
+  new FightingSkills("Big Bang Attack", 30, 20),
+  new FightingSkills("Final Flash", 40, 30),
 ]);
 
 const piccolo = new Character("Piccolo", 100, 65, [
-  new FightingSkills("Namekian martial arts", 35, 25),
-  new FightingSkills("Special Beam Cannon (piercing energy beam)", 30, 25),
-  new FightingSkills("Hellzone Grenade (energy sphere attack)", 35, 20),
+  new FightingSkills("Demon Shocker", 25, 15),
+  new FightingSkills("Special Beam Cannon", 30, 25),
+  new FightingSkills("Hellzone Grenade", 40, 30),
 ]);
 
 const gohan = new Character("Gohan", 100, 75, [
-  new FightingSkills("Masenko (energy wave attack)", 35, 20),
-  new FightingSkills("Kamehameha", 35, 30),
-  new FightingSkills("Mystic/Ultimate Gohan form", 40, 35),
+  new FightingSkills("Ultimate High Kick", 30, 20),
+  new FightingSkills("Masenkou", 35, 30),
+  new FightingSkills("Kamehameha", 40, 35),
 ]);
 
 const trunks = new Character("Trunks", 100, 75, [
-  new FightingSkills("Swordsmanship", 30, 20),
-  new FightingSkills("Burning Attack (energy wave attack)", 25, 20),
-  new FightingSkills("Super Saiyan transformations", 40, 30),
+  new FightingSkills("Shining Slash", 20, 10),
+  new FightingSkills("Burning Attack", 35, 25),
+  new FightingSkills("Heat Dome Attack", 40, 30),
 ]);
 
 // default opponent -> frieza info
 const frieza = new Character("Frieza", 100, 75, [
-  new FightingSkills("Intense hand-to-hand combat skills", 35, 25),
-  new FightingSkills("Death Beam (piercing energy beam)", 35, 25),
-  new FightingSkills("Supernova (planet-destroying attack)", 40, 30),
+  new FightingSkills("Death Ball", 35, 25),
+  new FightingSkills("Warp Smash", 25, 15),
+  new FightingSkills("Nova Strike", 40, 30),
 ]);
 
 // character choosing
