@@ -25,9 +25,11 @@ class FightingSkills {
 }
 
 // character info
+// hp // ap
 const goku = new Character("Goku", 100, 80, [
+  // hp // ap
   new FightingSkills("Kamehameha", 40, 35),
-  new FightingSkills("Rapid Kick Rush",30, 20),
+  new FightingSkills("Rapid Kick Rush", 30, 20),
   new FightingSkills("Super Kamehameha", 50, 40),
 ]);
 
@@ -70,38 +72,48 @@ function chooseCharacter() {
   });
 }
 
-function startGame(selectedCharacter) {
-  console.log(`You chosed ${selectedCharacter.name}!`);
-}
-
 // select attack
 function attackOptions(character) {
-  console.clear()
-  console.log(`Choose an attack, ${character.name}:`);
+  console.clear();
+  console.log(`Choose your attack, ${character.name}:`);
   character.attacks.forEach((attack, index) => {
     console.log(`${index + 1}. ${attack.skills}`);
-  })
+  });
 }
 
-// start game
+// select character then start game loop
+function startGame(selectedCharacter) {
+  console.clear();
+  console.log(`You chosed ${selectedCharacter.name}!`);
 
-// input attack
+  // start game
+  while (selectedCharacter.hp > 0 && frieza.hp > 0) {
+    attackOptions(selectedCharacter);
+  }
+  // input attack
 
-// generate frieza's attack (random)
+  // generate frieza's attack (random)
 
-// health status baase on the chosen attack
+  // health status baase on the chosen attack
 
-// print game result
+  // print game result
 
-// new game or end the game here
-
-
+  // play again or end game
+  const newGame = rs.question("Do you want to play again? (y | n): ").toLowerCase();
+  switch (newGame) {
+    case "y":
+      break;
+    case "n":
+      process.exit();
+  }
+}
 
 // Interaction
 while (true) {
   console.clear();
   console.log(`${chalk.yellowBright.bold.bgWhite("  💥 Dragon")}${chalk.red.bold.bgWhite("Ball Z")}${chalk.blueBright.bgWhite(" mini battle game 💥  ")}`);
 
+  // to start
   rs.question("\n\n\n\n\nPress enter to start . . .");
 
   // enter username
@@ -110,13 +122,20 @@ while (true) {
     chalk.white("\nEnter your username:\n") + chalk.blue.bold("> ")
   );
   console.clear();
-  console.log(`Hello, ${chalk.blue.bold(userName)}! Choose your character to defeat ${chalk.red.bold("Frieza")}:\n`);
- 
-  
-  chooseCharacter()
-  
+  console.log(
+    `Hello, ${chalk.blue.bold(
+      userName
+    )}! Choose your character to defeat ${chalk.red.bold("Frieza")}:\n`
+  );
+
+  chooseCharacter();
+
   // choose character input
-  const characterIndex = Number(rs.question("\nSelect your character (enter the number of the chosen character): "));
+  const characterIndex = Number(
+    rs.question(
+      "\nSelect your character (enter the number of the chosen character): "
+    )
+  );
   const selectedCharacter = characters[characterIndex];
 
   startGame(userName, selectedCharacter);
