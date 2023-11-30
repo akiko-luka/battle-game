@@ -70,6 +70,10 @@ function chooseCharacter() {
     console.log(`${index + 1}. ${chalk.bgWhite(character.name)}`);
   });
   // console.log("\n0. Exit");
+  //   if (characters === 0) {
+  //     console.log(chalk.black.bgWhiteBright("\n🐲🟠 Exiting . . ."));
+  //     process.exit();
+  //   }
 }
 
 // select attack
@@ -84,7 +88,9 @@ function attackOptions(character) {
 // select character then start game loop
 function startGame(selectedCharacter) {
   // console.clear();
-  console.log(`You chosed ${selectedCharacter.name}!`);
+  console.log(`
+You chosed ${selectedCharacter.name}!
+`);
   // console.log(selectedCharacter);
 
   // start game
@@ -101,30 +107,37 @@ function startGame(selectedCharacter) {
     frieza.hp -= selectedAttack.damage;
     selectedCharacter.hp -= friezaAttack.damage;
     // ap
-    frieza.ap -= selectedAttack.ap;
-    selectedCharacter.ap -= friezaAttack.ap;
+    // frieza.ap -= selectedAttack.ap;
+    // selectedCharacter.ap -= friezaAttack.ap;
     
     // print game attack process
     // console.clear()
-    console.log(`${selectedCharacter.name} attacks ${frieza.name} with ${selectedAttack.skill}, inflicting ${selectedAttack.damage} damage!`);
+    console.log(`
+${selectedCharacter.name} attacks ${frieza.name} with ${selectedAttack.skill}, inflicting ${selectedAttack.damage} damage!`);
     console.log(`
 ${frieza.name} counters back with ${friezaAttack.skill} inflicting ${friezaAttack.damage} damage!`);
 
     // health status after the attack
     console.log(`
-${selectedCharacter.name}'s HP: ${selectedCharacter.hp}|AP: ${selectedAttack.ap} | ${frieza.name}'s HP: ${frieza.hp}|AP: ${friezaAttack.ap}`);
+${selectedCharacter.name}'s HP: ${selectedCharacter.hp} | ${frieza.name}'s HP: ${frieza.hp}`);
 
 
   }
-    // print game result
+  // print game result
+  if (selectedCharacter.hp <= 0) {
+    console.log(chalk.red.bold("Game over! ") + frieza.name + (" defeated you!"));
+    // console.log(`Game over! ${frieza.name} defeated you!`);
+  } else {
+    console.log(chalk.blueBright.bold("\nYou won!"));
+  }
 
   // play again or end game
-  const newGame = rs.question("Do you want to play again? (y | n): ").toLowerCase();
+  const newGame = rs.question("\nDo you want to play again? (y | n): ").toLowerCase();
   switch (newGame) {
     case "y":
       break;
     case "n":
-      console.log("\nExiting . . .");
+      console.log(chalk.black.bgWhiteBright("\n🐲🟠 Exiting . . .\n"));
       process.exit();
   }
 }
@@ -132,7 +145,7 @@ ${selectedCharacter.name}'s HP: ${selectedCharacter.hp}|AP: ${selectedAttack.ap}
 // Interaction
 while (true) {
   console.clear();
-  console.log(`${chalk.yellowBright.bold.bgWhite("  💥 Dragon")}${chalk.red.bold.bgWhite("Ball Z")}${chalk.blueBright.bgWhite(" mini battle game 💥  ")}`);
+  console.log(`${chalk.yellowBright.bold.bgWhite("  💥 Dragon⍟")}${chalk.red.bold.bgWhite("Ball 𝐙")}${chalk.blueBright.bgWhite(" mini battle game 💥  ")}`);
 
   // to start
   rs.question("\n\n\n\n\nPress enter to start . . .");
@@ -141,23 +154,14 @@ while (true) {
   console.clear();
   let userName = rs.question(chalk.white("\nEnter your username:\n") + chalk.blue.bold(">>> "));
   console.clear();
-  console.log(`Hello, ${chalk.blue.bold(userName)}! Choose your character to defeat ${frieza.name}:\n`);
+  console.log(`Hello, ${chalk.blue.bold(userName)}! Choose your character to defeat ${frieza.name}!\n`);
 
   chooseCharacter();
 
   // choose character input
-  const characterInput = Number(rs.question(`
-Enter the number of the chosen character: ${chalk.blue.bold(" >>> ")}`));
-  // const characterInput = Number(rs.question(chalk.white("\nEnter the number of the chosen character:") + chalk.blue.bold(">>> ")));
+  const characterInput = Number(rs.question(`Enter the number of the chosen character: ${chalk.blue.bold(" >>> ")}`));
+
   const selectedCharacter = characters[characterInput - 1];
-  // switch (characters) {
-  //   case "0":
-  //     console.log("Exiting . . .");
-  //     process.exit();
-  //   default:
-  //     console.log("Invalid option!");
-  // }
-  // rs.question("Press enter to continue . . .")
 
   startGame(selectedCharacter);
 }
