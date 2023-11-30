@@ -25,39 +25,39 @@ class FightingSkills {
 
 // character info
                                 // hp
-const goku = new Character("Goku", 100, [
+const goku = new Character(chalk.yellow.bold("Goku"), 100, [
                                 // hp // ap
   new FightingSkills("Kamehameha", 40, 35),
   new FightingSkills("Rapid Kick Rush", 30, 20),
   new FightingSkills("Super Kamehameha", 50, 40),
 ]);
 
-const vegeta = new Character("Vegeta", 100, [
+const vegeta = new Character(chalk.blue.bold("Vegeta"), 100, [
   new FightingSkills("Super Dash Kick", 25, 15),
   new FightingSkills("Big Bang Attack", 30, 20),
   new FightingSkills("Final Flash", 40, 30),
 ]);
 
-const piccolo = new Character("Piccolo", 100, [
+const piccolo = new Character(chalk.green.bold("Piccolo"), 100, [
   new FightingSkills("Demon Shocker", 25, 15),
   new FightingSkills("Special Beam Cannon", 30, 25),
   new FightingSkills("Hellzone Grenade", 40, 30),
 ]);
 
-const gohan = new Character("Gohan", 100, [
+const gohan = new Character(chalk.red.bold("Gohan"), 100, [
   new FightingSkills("Ultimate High Kick", 30, 20),
   new FightingSkills("Masenkou", 35, 30),
   new FightingSkills("Kamehameha", 40, 35),
 ]);
 
-const trunks = new Character("Trunks", 100, [
+const trunks = new Character(chalk.cyan.bold("Trunks"), 100, [
   new FightingSkills("Shining Slash", 20, 10),
   new FightingSkills("Burning Attack", 35, 25),
   new FightingSkills("Heat Dome Attack", 40, 30),
 ]);
 
 // default opponent -> frieza info
-const frieza = new Character("Frieza", 100, [
+const frieza = new Character(chalk.magenta.bold("Frieza"), 100, [
   new FightingSkills("Death Ball", 35, 25),
   new FightingSkills("Warp Smash", 25, 15),
   new FightingSkills("Nova Strike", 40, 30),
@@ -67,7 +67,7 @@ const frieza = new Character("Frieza", 100, [
 const characters = [goku, vegeta, piccolo, gohan, trunks];
 function chooseCharacter() {
   characters.forEach((character, index) => {
-    console.log(`${index + 1}. ${character.name}`);
+    console.log(`${index + 1}. ${chalk.bgWhite(character.name)}`);
   });
   // console.log("\n0. Exit");
 }
@@ -91,7 +91,7 @@ function startGame(selectedCharacter) {
   while (selectedCharacter.hp > 0 && frieza.hp > 0) {
     attackOptions(selectedCharacter);
     // input attack
-    const chooseAttack = Number(rs.question("\nEnter your attack:\n>>> ")) - 1;
+    const chooseAttack = Number(rs.question(chalk.white("\nEnter your attack:\n") + chalk.blue.bold(">>> "))) - 1;
     const selectedAttack = selectedCharacter.attacks[chooseAttack];
     
     // generate frieza's attack (random)
@@ -106,13 +106,13 @@ function startGame(selectedCharacter) {
     
     // print game attack process
     // console.clear()
-    console.log(`${selectedCharacter.name} attacks Frieza with ${selectedAttack.skill}, inflicting ${selectedAttack.damage} damage!`);
+    console.log(`${selectedCharacter.name} attacks ${frieza.name} with ${selectedAttack.skill}, inflicting ${selectedAttack.damage} damage!`);
     console.log(`
-Frieza counters back with ${friezaAttack.skill} inflicting ${friezaAttack.damage} damage!`);
+${frieza.name} counters back with ${friezaAttack.skill} inflicting ${friezaAttack.damage} damage!`);
 
     // health status after the attack
     console.log(`
-${selectedCharacter.name}'s HP: ${selectedCharacter.hp}|AP: ${selectedAttack.ap} | Frieza's HP: ${frieza.hp}|AP: ${friezaAttack.ap}`);
+${selectedCharacter.name}'s HP: ${selectedCharacter.hp}|AP: ${selectedAttack.ap} | ${frieza.name}'s HP: ${frieza.hp}|AP: ${friezaAttack.ap}`);
 
 
   }
@@ -139,15 +139,16 @@ while (true) {
 
   // enter username
   console.clear();
-  let userName = rs.question(
-    chalk.white("\nEnter your username:\n") + chalk.blue.bold(">>> "));
+  let userName = rs.question(chalk.white("\nEnter your username:\n") + chalk.blue.bold(">>> "));
   console.clear();
-  console.log(`Hello, ${chalk.blue.bold(userName)}! Choose your character to defeat ${chalk.magenta.bold("Frieza")}:\n`);
+  console.log(`Hello, ${chalk.blue.bold(userName)}! Choose your character to defeat ${frieza.name}:\n`);
 
   chooseCharacter();
 
   // choose character input
-  const characterInput = Number(rs.question("\nEnter the number of the chosen character: "));
+  const characterInput = Number(rs.question(`
+Enter the number of the chosen character: ${chalk.blue.bold(" >>> ")}`));
+  // const characterInput = Number(rs.question(chalk.white("\nEnter the number of the chosen character:") + chalk.blue.bold(">>> ")));
   const selectedCharacter = characters[characterInput - 1];
   // switch (characters) {
   //   case "0":
