@@ -100,14 +100,19 @@ function startGame(selectedCharacter) {
     // health status base on the chosen attack
     frieza.hp -= selectedAttack.damage;
     selectedCharacter.hp -= friezaAttack.damage;
+    // ap
+    frieza.ap -= selectedAttack.ap;
+    selectedCharacter.ap -= friezaAttack.ap;
     
     // print game attack process
     // console.clear()
     console.log(`${selectedCharacter.name} attacks Frieza with ${selectedAttack.skill}, inflicting ${selectedAttack.damage} damage!`);
-    console.log(`Frieza counters back with ${friezaAttack.skill} inflicting ${friezaAttack.damage} damage!`);
+    console.log(`
+Frieza counters back with ${friezaAttack.skill} inflicting ${friezaAttack.damage} damage!`);
 
     // health status after the attack
-    console.log(`${selectedCharacter.name}'s HP: ${selectedCharacter.hp} | Frieza's HP: ${frieza.hp}`);
+    console.log(`
+${selectedCharacter.name}'s HP: ${selectedCharacter.hp}|AP: ${selectedAttack.ap} | Frieza's HP: ${frieza.hp}|AP: ${friezaAttack.ap}`);
 
 
   }
@@ -137,12 +142,12 @@ while (true) {
   let userName = rs.question(
     chalk.white("\nEnter your username:\n") + chalk.blue.bold(">>> "));
   console.clear();
-  console.log(`Hello, ${chalk.blue.bold(userName)}! Choose your character to defeat ${chalk.red.bold("Frieza")}:\n`);
+  console.log(`Hello, ${chalk.blue.bold(userName)}! Choose your character to defeat ${chalk.magenta.bold("Frieza")}:\n`);
 
   chooseCharacter();
 
   // choose character input
-  const characterInput = Number(rs.question("\nSelect your character (enter the number of the chosen character): "));
+  const characterInput = Number(rs.question("\nEnter the number of the chosen character): "));
   const selectedCharacter = characters[characterInput - 1];
   // switch (characters) {
   //   case "0":
