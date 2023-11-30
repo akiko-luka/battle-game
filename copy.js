@@ -69,7 +69,7 @@ function chooseCharacter() {
   characters.forEach((character, index) => {
     console.log(`${index + 1}. ${character.name}`);
   });
-  console.log("\n0. Exit");
+  // console.log("\n0. Exit");
 }
 
 // select attack
@@ -91,8 +91,8 @@ function startGame(selectedCharacter) {
   while (selectedCharacter.hp > 0 && frieza.hp > 0) {
     attackOptions(selectedCharacter);
     // input attack
-    const chooseAttack = Number(rs.question("Choose your attack:"));
-    const selectedAttack = selectedCharacter.attacks[chooseAttack - 1];
+    const chooseAttack = Number(rs.question("Choose your attack:")) - 1;
+    const selectedAttack = selectedCharacter.attacks[chooseAttack];
     
     // generate frieza's attack (random)
     const friezaAttack = frieza.attacks[Math.floor(Math.random() * frieza.attacks.length)];
@@ -110,6 +110,7 @@ function startGame(selectedCharacter) {
     case "y":
       break;
     case "n":
+      console.log("\nExiting . . .");
       process.exit();
   }
 }
