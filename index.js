@@ -69,11 +69,7 @@ function chooseCharacter() {
   characters.forEach((character, index) => {
     console.log(`${index + 1}. ${chalk.bgWhite(character.name)}`);
   });
-  // console.log("\n0. Exit");
-  //   if (characters === 0) {
-  //     console.log(chalk.black.bgWhiteBright("\n🐲🟠 Exiting . . ."));
-  //     process.exit();
-  //   }
+  console.log("\n0. Exit\n");
 }
 
 // select attack
@@ -124,10 +120,10 @@ ${selectedCharacter.name}'s HP: ${selectedCharacter.hp} | ${frieza.name}'s HP: $
   }
   // print game result
   if (selectedCharacter.hp <= 0) {
-    console.log(chalk.red.bold("Game over! ") + frieza.name + (" defeated you!"));
+    console.log(chalk.red.bold("Game over! ") + frieza.name + (" defeated you! ❌"));
     // console.log(`Game over! ${frieza.name} defeated you!`);
   } else {
-    console.log(chalk.blueBright.bold("\nYou won!"));
+    console.log(chalk.blueBright.bold("\nYou won! 🔥🎉"));
   }
 
   // play again or end game
@@ -161,6 +157,10 @@ while (true) {
 
   // choose character input
   const characterInput = Number(rs.question(`Enter the number of the chosen character: ${chalk.blue.bold(" >>> ")}`));
+  if (characterInput === 0) {
+    console.log(chalk.black.bgWhiteBright("\n🐲🟠 Exiting . . ."));
+    process.exit();
+  }
 
   const selectedCharacter = characters[characterInput - 1];
 
