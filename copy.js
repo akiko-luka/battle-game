@@ -81,7 +81,7 @@ function attackOptions(character) {
   // console.clear();
   console.log(`Choose your attack, ${character.name}:\n`);
   character.attacks.forEach((attack, index) => {
-    console.log(`${index + 1}. ${attack.skill}`);
+    console.log(`${index + 1}. ${attack.skill} - ${attack.damage}`);
   });
 }
 

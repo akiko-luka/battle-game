@@ -81,7 +81,7 @@ function attackOptions(character) {
   // console.clear();
   console.log(`Choose your attack, ${character.name}:\n`);
   character.attacks.forEach((attack, index) => {
-    console.log(`${index + 1}. ${attack.skill}`);
+    console.log(`${index + 1}. ${attack.skill} - ${attack.damage} damage`);
   });
 }
 
@@ -154,7 +154,7 @@ while (true) {
   console.clear();
   let userName = rs.question(chalk.white("\nEnter your username:\n") + chalk.blue.bold(">>> "));
   console.clear();
-  console.log(`Hello, ${chalk.blue.bold(userName)}! Choose your character to defeat ${frieza.name}!\n`);
+  console.log(`Hello, ${chalk.blue.bold(userName)}! Choose your character to defeat ${frieza.name}!\n${chalk.italic("NOTE: Each character's health is 100 at the start of the game.\n")}`);
 
   chooseCharacter();
 
