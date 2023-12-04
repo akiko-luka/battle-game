@@ -77,7 +77,7 @@ function attackOptions(character) {
   // console.clear();
   console.log(`Choose your attack for ${character.name}:\n`);
   character.attacks.forEach((attack, index) => {
-    console.log(`${index + 1}. ${attack.skill} - ${attack.damage} damage`);
+    console.log(`${index + 1}. ${attack.skill} - Damage: ${attack.damage} | AP: ${attack.ap}`);
   });
 }
 
@@ -100,8 +100,9 @@ You chosed ${selectedCharacter.name}!
     const friezaAttack = frieza.attacks[Math.floor(Math.random() * frieza.attacks.length)];
     
     // health status base on the chosen attack
-    frieza.hp -= selectedAttack.damage;
-    selectedCharacter.hp -= friezaAttack.damage;
+frieza.hp = Math.max(frieza.hp - selectedAttack.damage, 0);
+selectedCharacter.hp = Math.max(selectedCharacter.hp - friezaAttack.damage, 0);
+
     // ap
     // frieza.ap -= selectedAttack.ap;
     // selectedCharacter.ap -= friezaAttack.ap;
@@ -109,8 +110,8 @@ You chosed ${selectedCharacter.name}!
     // print game attack process
     // console.clear()
     console.log(`
-${selectedCharacter.name} attacks ${frieza.name} with ${selectedAttack.skill}, inflicting ${selectedAttack.damage} damage!`);
-    console.log(`${frieza.name} counters back with ${friezaAttack.skill} inflicting ${friezaAttack.damage} damage!`);
+${selectedCharacter.name} attacks ${frieza.name} with ${selectedAttack.skill}, inflicting ${selectedAttack.damage} damage and consuming ${selectedAttack.ap} AP!`);
+    console.log(`${frieza.name} counters back with ${friezaAttack.skill} inflicting ${friezaAttack.damage} damage and consuming ${friezaAttack.ap} AP!`);
 
     // health status after the attack
     console.log(`
@@ -156,13 +157,15 @@ while (true) {
   chooseCharacter();
 
   // choose character input
-  const characterInput = Number(rs.question(`Enter the number of the chosen character: ${chalk.blue.bold(" >>> ")}`));
+  let characterInput = Number(rs.question(`Enter the number of the chosen character: ${chalk.blue.bold(" >>> ")}`));
   if (characterInput === 0) {
     console.log(chalk.black.bgWhiteBright("\n🐲🟠 Exiting . . ."));
     process.exit();
-  } else if (characterInput <= 1 || characterInput >= characters.length) {
-    console.log("Invalid input!");
-    break;
+  } else if (characterInput >= 1 && characterInput <= characters.length) {
+    // Valid input, exit the loop
+    // break;
+  } else {
+    console.log("Invalid input! Please enter a valid character number.");
   }
 
   const selectedCharacter = characters[characterInput - 1];

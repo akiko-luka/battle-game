@@ -1,6 +1,6 @@
 # PB - Programming Basics Final Project at DCI Digital Career Institute.
 
-## DragonBall Z mini battle game
+<h2 style="text-align: center;">DragonBall Z mini battle game</h2>
 
 ![](images/battle-game.png) Photo edit by: Pila Gonzalez
 
