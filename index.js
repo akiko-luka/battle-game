@@ -160,12 +160,13 @@ while (true) {
   if (characterInput === 0) {
     console.log(chalk.black.bgWhiteBright("\n🐲🟠 Exiting . . ."));
     process.exit();
-  } else if (characterInput >= 1 && characterInput <= characters.length){
+  } else if (characterInput < 1 || characterInput >= characters.length){
     console.log("Invalid input!");
-    rs.question("Press enter to restart")
+    rs.question("Press enter to restart . . .")
+  } else {
+    const selectedCharacter = characters[characterInput - 1];
+  
+    startGame(selectedCharacter);
   }
 
-  const selectedCharacter = characters[characterInput - 1];
-
-  startGame(selectedCharacter);
 }

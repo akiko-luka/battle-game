@@ -100,8 +100,8 @@ You chosed ${selectedCharacter.name}!
     const friezaAttack = frieza.attacks[Math.floor(Math.random() * frieza.attacks.length)];
     
     // health status base on the chosen attack
-frieza.hp = Math.max(frieza.hp - selectedAttack.damage, 0);
-selectedCharacter.hp = Math.max(selectedCharacter.hp - friezaAttack.damage, 0);
+    frieza.hp = Math.max(frieza.hp - selectedAttack.damage, 0);
+    selectedCharacter.hp = Math.max(selectedCharacter.hp - friezaAttack.damage, 0);
 
     // ap
     // frieza.ap -= selectedAttack.ap;
@@ -116,9 +116,8 @@ ${selectedCharacter.name} attacks ${frieza.name} with ${selectedAttack.skill}, i
     // health status after the attack
     console.log(`
 ${selectedCharacter.name}'s HP: ${selectedCharacter.hp} | ${frieza.name}'s HP: ${frieza.hp}`);
+}
 
-
-  }
   // print game result
   if (selectedCharacter.hp <= 0) {
     console.log(chalk.red.bold("Game over! ") + frieza.name + (" defeated you! ❌"));
@@ -152,7 +151,7 @@ while (true) {
   console.clear();
   let userName = rs.question(chalk.white("\nEnter your username:\n") + chalk.blue.bold(">>> "));
   console.clear();
-  console.log(`Hello, ${chalk.blue.bold(userName)}! Choose your character to defeat ${frieza.name}!\n${chalk.italic("NOTE: Each character's health is 100 at the start of the game.\n")}`);
+  console.log(`Hello, ${chalk.blue.bold(userName)}! Choose your character to defeat ${frieza.name}!\n${chalk.italic("► NOTE: Each character's health is 100 at the start of the game. ◄\n")}`);
 
   chooseCharacter();
 
@@ -161,14 +160,13 @@ while (true) {
   if (characterInput === 0) {
     console.log(chalk.black.bgWhiteBright("\n🐲🟠 Exiting . . ."));
     process.exit();
-  } else if (characterInput >= 1 && characterInput <= characters.length) {
-    // Valid input, exit the loop
-    // break;
+  } else if (characterInput < 1 || characterInput >= characters.length){
+    console.log("Invalid input!");
+    rs.question("Press enter to restart . . .")
   } else {
-    console.log("Invalid input! Please enter a valid character number.");
+    const selectedCharacter = characters[characterInput - 1];
+  
+    startGame(selectedCharacter);
   }
 
-  const selectedCharacter = characters[characterInput - 1];
-
-  startGame(selectedCharacter);
 }
