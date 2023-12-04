@@ -2,6 +2,7 @@
 
 <h2 align="center">DragonBall Z mini battle game</h2>
 
+
 ![](images/battle-game.png) Photo edit by: Pila Gonzalez
 
 ### Tools used:

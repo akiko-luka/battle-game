@@ -116,9 +116,8 @@ ${selectedCharacter.name} attacks ${frieza.name} with ${selectedAttack.skill}, i
     // health status after the attack
     console.log(`
 ${selectedCharacter.name}'s HP: ${selectedCharacter.hp} | ${frieza.name}'s HP: ${frieza.hp}`);
+}
 
-
-  }
   // print game result
   if (selectedCharacter.hp <= 0) {
     console.log(chalk.red.bold("Game over! ") + frieza.name + (" defeated you! ❌"));
