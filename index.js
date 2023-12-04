@@ -134,6 +134,8 @@ ${selectedCharacter.name}'s HP: ${selectedCharacter.hp} | ${frieza.name}'s HP: $
   const newGame = rs.question("\nDo you want to play again? (y | n): ").toLowerCase();
   switch (newGame) {
     case "y":
+      selectedCharacter.hp = 100;
+      frieza.hp = 100;
       break;
     case "n":
       console.log(chalk.black.bgWhiteBright("\n🐲🟠 Exiting . . .\n"));
