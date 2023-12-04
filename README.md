@@ -2,7 +2,7 @@
 
 ## DragonBall Z mini battle game
 
-![](images/battle-game.png) Photo credit: Pila
+![](images/battle-game.png) Photo edit by: Pila Gonzalez
 
 ### Tools used:
 - Node.js

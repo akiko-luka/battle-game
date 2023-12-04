@@ -79,7 +79,7 @@ function chooseCharacter() {
 // select attack
 function attackOptions(character) {
   // console.clear();
-  console.log(`Choose your attack, ${character.name}:\n`);
+  console.log(`Choose your attack for ${character.name}:\n`);
   character.attacks.forEach((attack, index) => {
     console.log(`${index + 1}. ${attack.skill} - ${attack.damage} damage`);
   });
@@ -114,8 +114,7 @@ You chosed ${selectedCharacter.name}!
     // console.clear()
     console.log(`
 ${selectedCharacter.name} attacks ${frieza.name} with ${selectedAttack.skill}, inflicting ${selectedAttack.damage} damage!`);
-    console.log(`
-${frieza.name} counters back with ${friezaAttack.skill} inflicting ${friezaAttack.damage} damage!`);
+    console.log(`${frieza.name} counters back with ${friezaAttack.skill} inflicting ${friezaAttack.damage} damage!`);
 
     // health status after the attack
     console.log(`
