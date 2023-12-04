@@ -93,7 +93,12 @@ You chosed ${selectedCharacter.name}!
   while (selectedCharacter.hp > 0 && frieza.hp > 0) {
     attackOptions(selectedCharacter);
     // input attack
-    const chooseAttack = Number(rs.question(chalk.white("\nEnter your attack:\n") + chalk.blue.bold(">>> "))) - 1;
+    let chooseAttack = Number(rs.question(chalk.white("\nEnter your attack:\n") + chalk.blue.bold(">>> "))) - 1;
+    if (chooseAttack < 0 ||chooseAttack >= selectedCharacter.attacks.length) {
+      console.log("Invalid input!");
+      continue;
+    }
+    
     const selectedAttack = selectedCharacter.attacks[chooseAttack];
     
     // generate frieza's attack (random)
