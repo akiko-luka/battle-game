@@ -23,4 +23,3 @@
 ![](images/Screenshot-battle-game2.png)
 ![](images/Screenshot-battle-game3.png)
 ![](images/Screenshot-battle-game4.png)
-

@@ -151,7 +151,7 @@ while (true) {
   console.clear();
   let userName = rs.question(chalk.white("\nEnter your username:\n") + chalk.blue.bold(">>> "));
   console.clear();
-  console.log(`Hello, ${chalk.blue.bold(userName)}! Choose your character to defeat ${frieza.name}!\n${chalk.italic("NOTE: Each character's health is 100 at the start of the game.\n")}`);
+  console.log(`Hello, ${chalk.blue.bold(userName)}! Choose your character to defeat ${frieza.name}!\n${chalk.italic("► NOTE: Each character's health is 100 at the start of the game. ◄\n")}`);
 
   chooseCharacter();
 
@@ -160,6 +160,9 @@ while (true) {
   if (characterInput === 0) {
     console.log(chalk.black.bgWhiteBright("\n🐲🟠 Exiting . . ."));
     process.exit();
+  } else if (characterInput >= 1 && characterInput <= characters.length){
+    console.log("Invalid input!");
+    rs.question("Press enter to restart")
   }
 
   const selectedCharacter = characters[characterInput - 1];
