@@ -125,10 +125,10 @@ ${selectedCharacter.name}'s HP: ${selectedCharacter.hp} | ${frieza.name}'s HP: $
 
   // print game result
   if (selectedCharacter.hp <= 0) {
-    console.log(chalk.red.bgBlack.bold("\nGame over! ") + frieza.name + (" defeated you! ❌"));
+    console.log(chalk.red.bgBlack.bold("\n Game over! ") + frieza.name + (" defeated you! ❌ "));
     // console.log(`Game over! ${frieza.name} defeated you!`);
   } else {
-    console.log(chalk.blueBright.bgBlack.bold("\nYou won! 🔥🎉"));
+    console.log(chalk.blueBright.bgBlack.bold("\n You won! 🔥🎉 "));
   }
 
   // play again or end game
@@ -139,7 +139,7 @@ ${selectedCharacter.name}'s HP: ${selectedCharacter.hp} | ${frieza.name}'s HP: $
       frieza.hp = 100;
       break;
     case "n":
-      console.log(chalk.black.bgWhiteBright("\n🐲🟠 Exiting . . .\n"));
+      console.log(chalk.black.bgWhiteBright("\n 🐲🟠 Exiting . . . \n"));
       process.exit();
   }
 }
@@ -163,7 +163,7 @@ while (true) {
   // choose character input
   let characterInput = Number(rs.question(`Enter the number of the chosen character: ${chalk.blue.bold(" >>> ")}`));
   if (characterInput === 0) {
-    console.log(chalk.black.bgWhiteBright("\n🐲🟠 Exiting . . ."));
+    console.log(chalk.black.bgWhiteBright("\n 🐲🟠 Exiting . . . "));
     process.exit();
   } else if (characterInput < 1 || characterInput >= characters.length){
     console.log("Invalid input!");
