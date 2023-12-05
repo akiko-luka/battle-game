@@ -116,7 +116,7 @@ You chosed ${selectedCharacter.name}!
     // console.clear()
     console.log(`
 ${selectedCharacter.name} attacks ${frieza.name} with ${selectedAttack.skill}, inflicting ${selectedAttack.damage} damage and consuming ${selectedAttack.ap} AP!`);
-    console.log(`${frieza.name} counters back with ${friezaAttack.skill} inflicting ${friezaAttack.damage} damage and consuming ${friezaAttack.ap} AP!`);
+    console.log(`${frieza.name} counters back with ${friezaAttack.skill}, inflicting ${friezaAttack.damage} damage and consuming ${friezaAttack.ap} AP!`);
 
     // health status after the attack
     console.log(`
@@ -125,10 +125,10 @@ ${selectedCharacter.name}'s HP: ${selectedCharacter.hp} | ${frieza.name}'s HP: $
 
   // print game result
   if (selectedCharacter.hp <= 0) {
-    console.log(chalk.red.bold("Game over! ") + frieza.name + (" defeated you! ❌"));
+    console.log(chalk.red.bgBlack.bold("\nGame over! ") + frieza.name + (" defeated you! ❌"));
     // console.log(`Game over! ${frieza.name} defeated you!`);
   } else {
-    console.log(chalk.blueBright.bold("\nYou won! 🔥🎉"));
+    console.log(chalk.blueBright.bgBlack.bold("\nYou won! 🔥🎉"));
   }
 
   // play again or end game

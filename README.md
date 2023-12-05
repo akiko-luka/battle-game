@@ -3,7 +3,7 @@
 <h2 align="center">DragonBall Z mini battle game</h2>
 
 
-![](images/battle-game.png) Photo edit by: Pila Gonzalez
+![](images/battle-game.jpg) Photo edit by: Pila Gonzalez
 
 ### Tools used:
 - Node.js
@@ -19,7 +19,7 @@
 5. Press **y** if you want to play again, press **n** to exit.
 
 #### Screenshots:
-![](images/Screenshot-dbz-battle-game1.png)
-![](images/Screenshot-dbz-battle-game2.png)
-![](images/Screenshot-dbz-battle-game3.png)
-![](images/Screenshot-dbz-battle-game4.png)
+![](images/Screenshot-battle-game1.png)
+![](images/Screenshot-battle-game2.png)
+![](images/Screenshot-battle-game3.png)
+![](images/Screenshot-battle-game4.png)
