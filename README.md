@@ -3,8 +3,11 @@
 <h2 align="center">DragonBall Z mini battle game</h2>
 
 
-![](images/battle-game.jpg)
+<p align="center">
+  <img src="/images/battle-game.jpg" />
+</p>
 Photo edit by: Pila Gonzalez
+
 
 ### Tools used:
 - Node.js
