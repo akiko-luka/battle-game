@@ -23,7 +23,7 @@ Photo edit by: Pila Gonzalez
 5. Press **y** if you want to play again, press **n** to exit.
 
 #### Screenshots:
-![](images/Screenshot-battle-game1.png)
-![](images/Screenshot-battle-game2.png)
-![](images/Screenshot-battle-game3.png)
-![](images/Screenshot-battle-game4.png)
+![](images/Screenshot-battle-game1.jpg)
+![](images/Screenshot-battle-game2.jpg)
+![](images/Screenshot-battle-game3.jpg)
+![](images/Screenshot-battle-game4.jpg)
