@@ -24,7 +24,7 @@ class FightingSkills {
 }
 
 // character info
-                                // hp
+                                                    // hp
 const goku = new Character(chalk.yellow.bold("Goku"), 100, [
                                 // hp // ap
   new FightingSkills("Kamehameha", 40, 35),
@@ -95,7 +95,7 @@ You chosed ${selectedCharacter.name}!
     // input attack
     let chooseAttack = Number(rs.question(chalk.white("\nEnter your attack:\n") + chalk.blue.bold(">>> "))) - 1;
     if (chooseAttack < 0 ||chooseAttack >= selectedCharacter.attacks.length) {
-      console.log("Invalid input!");
+      console.log("❗Invalid input❗");
       continue;
     }
     
@@ -166,7 +166,7 @@ while (true) {
     console.log(chalk.black.bgWhiteBright("\n 🐲🟠 Exiting . . . "));
     process.exit();
   } else if (characterInput < 1 || characterInput >= characters.length){
-    console.log("Invalid input!");
+    console.log("❗Invalid input❗");
     rs.question("Press enter to restart . . .")
   } else {
     const selectedCharacter = characters[characterInput - 1];
