@@ -5,10 +5,10 @@ import chalk from "chalk";
 class Character {
   constructor(name, hp, attacks) {
     this.name = name;
-    this.hp = hp; // hp -> hit points/health
+    this.hp = hp; // hp -> health/hit points
     this.attacks = attacks;
   }
-  // character health
+  // Method check if the character is alive
   isAlive() {
     return this.hp > 0;
   }
@@ -87,7 +87,6 @@ function startGame(selectedCharacter) {
   console.log(`
 You chosed ${selectedCharacter.name}!
 `);
-  // console.log(selectedCharacter);
 
   // start game
   while (selectedCharacter.hp > 0 && frieza.hp > 0) {
@@ -95,7 +94,7 @@ You chosed ${selectedCharacter.name}!
     // input attack
     let chooseAttack = Number(rs.question(chalk.white("\nEnter your attack:\n") + chalk.blue.bold(">>> "))) - 1;
     if (chooseAttack < 0 ||chooseAttack >= selectedCharacter.attacks.length) {
-      console.log("❗Invalid input❗");
+      console.log("❗Invalid input❗\n");
       continue;
     }
     
@@ -144,7 +143,7 @@ ${selectedCharacter.name}'s HP: ${selectedCharacter.hp} | ${frieza.name}'s HP: $
   }
 }
 
-// Interaction
+// Interaction/main game loop
 while (true) {
   console.clear();
   console.log(`${chalk.yellowBright.bold.bgWhite("  💥 Dragon⍟")}${chalk.red.bold.bgWhite("Ball 𝐙")}${chalk.blueBright.bgWhite(" mini battle game 💥  ")}`);

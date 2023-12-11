@@ -15,11 +15,11 @@ Photo edit by: Pila Gonzalez
 - VSCode
 
 ### Game rule:
-1. Press enter to start the game.
+1. Press `enter` to start the game.
 2. Enter your username.
 3. Choose a character to defeat Frieza.
 4. Choose an attack.
-5. Press **y** if you want to play again, press **n** to exit.
+5. Press `y` if you want to play again, press `n` to exit.
 
 #### Screenshots:
 ![](images/Screenshot-battle-game1.png)
