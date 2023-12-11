@@ -17,7 +17,7 @@ class Character {
 // class for skills
 class FightingSkills {
   constructor(skill, damage, ap) {
-    this.skill = skill;
+    this.skill = skill; // -> skill name
     this.damage = damage;
     this.ap = ap; // ap -> attack points/magic
   }
@@ -26,7 +26,7 @@ class FightingSkills {
 // character info
                                                     // hp
 const goku = new Character(chalk.yellow.bold("Goku"), 100, [
-                                // hp // ap
+                    //skill name,  hp, ap
   new FightingSkills("Kamehameha", 40, 35),
   new FightingSkills("Rapid Kick Rush", 30, 20),
   new FightingSkills("Super Kamehameha", 50, 40),
@@ -103,7 +103,7 @@ You chosed ${selectedCharacter.name}!
     // generate frieza's attack (random)
     const friezaAttack = frieza.attacks[Math.floor(Math.random() * frieza.attacks.length)];
     
-    // health status base on the chosen attack
+    // health status based on the chosen attack
     frieza.hp = Math.max(frieza.hp - selectedAttack.damage, 0);
     selectedCharacter.hp = Math.max(selectedCharacter.hp - friezaAttack.damage, 0);
 
@@ -125,7 +125,6 @@ ${selectedCharacter.name}'s HP: ${selectedCharacter.hp} | ${frieza.name}'s HP: $
   // print game result
   if (selectedCharacter.hp <= 0) {
     console.log(chalk.red.bgBlack.bold("\n Game over! ") + frieza.name + (" defeated you! ❌ "));
-    // console.log(`Game over! ${frieza.name} defeated you!`);
   } else {
     console.log(chalk.blueBright.bgBlack.bold("\n You won! 🔥🎉 "));
   }
@@ -172,5 +171,4 @@ while (true) {
   
     startGame(selectedCharacter);
   }
-
 }
