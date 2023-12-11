@@ -11,7 +11,7 @@ Photo edit by: <a href="https://github.com/Pilag6/" target="_blank">@Pilag6</a>
 This project is for educational purposes only. All credit for the design is given to the original designer.
 
 ### Overview
-The Dragon⍟Ball 𝐙 Mini Battle Game is a turn-based console game built using `Node.js` for a project. It engages players in battles against the default opponent, Frieza, offering a Dragon Ball Z-themed gaming experience. The game uses `readline-sync` to create an interactive game and `chalk` to enhance console output with colorful visuals.
+The Dragon⍟Ball 𝐙 Mini Battle Game is a turn-based console game built using `Node.js`. It engages players in battles against the default opponent, Frieza, offering a Dragon Ball Z-themed gaming experience. The game uses `readline-sync` library to create an interactive experience and `chalk` to enhance console output with colorful visuals.
 
 ### Tools used
 - Node.js
@@ -40,3 +40,5 @@ Contributions to the Dragon⍟Ball 𝐙 Mini Battle Game are welcome and greatly
 3. Implement changes and commit them: `git commit -m 'Add new feature'`.
 4. Push changes to your fork: `git push origin feature-name`.
 5. Open a pull request.
+
+Embark on your journey, and may the Dragon Balls guide you to success! 🐉⚔️ Happy coding and gaming! 🚀🎮
