@@ -32,7 +32,7 @@ The Dragon⍟Ball 𝐙 Mini Battle Game is a turn-based console game built using
 ![](images/Screenshot-battle-game3.png)
 ![](images/Screenshot-battle-game4.png)
 
-## Contributing:
+## Contributing
 Contributions to the Dragon⍟Ball 𝐙 Mini Battle Game are welcome and greatly appreciated! If you'd like to contribute, follow these steps:
 
 1. Fork the repository.
@@ -41,4 +41,4 @@ Contributions to the Dragon⍟Ball 𝐙 Mini Battle Game are welcome and greatly
 4. Push changes to your fork: `git push origin feature-name`.
 5. Open a pull request.
 
-Embark on your journey, and may the Dragon Balls guide you to success! 🐉⚔️ Happy coding and gaming! 🚀🎮
+Embark on your journey and may the Dragon Balls guide you to success! 🐉⚔️ Happy coding and gaming! 🚀🎮
