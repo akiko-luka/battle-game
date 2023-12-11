@@ -1,4 +1,4 @@
-# PB - Programming Basics Final Project at DCI Digital Career Institute.
+# PB - Programming Basics Final Project at DCI Digital Career Institute
 
 ## DragonBall Z mini battle game
 
@@ -26,13 +26,13 @@ The Dragon⍟Ball 𝐙 Mini Battle Game is a turn-based console game built using
 4. Choose an attack.
 5. Press `y` if you want to play again, press `n` to exit.
 
-## Screenshots
+## Screenshots:
 ![](images/Screenshot-battle-game1.png)
 ![](images/Screenshot-battle-game2.png)
 ![](images/Screenshot-battle-game3.png)
 ![](images/Screenshot-battle-game4.png)
 
-## Contributing
+## Contributing:
 Contributions to the Dragon⍟Ball 𝐙 Mini Battle Game are welcome and greatly appreciated! If you'd like to contribute, follow these steps:
 
 1. Fork the repository.
